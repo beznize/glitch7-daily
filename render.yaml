@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: glitch7-daily
+    runtime: static
+    buildCommand: echo "GLITCH 7 is a dependency-free static site"
+    staticPublishPath: public
+    headers:
+      - path: /*
+        name: X-Content-Type-Options
+        value: nosniff
+      - path: /*
+        name: Referrer-Policy
+        value: strict-origin-when-cross-origin
